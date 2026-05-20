@@ -1,5 +1,7 @@
 import "./App.scss";
+import { useEffect } from "react";
 import Contact from "./components/Contact/Contact";
+import VisitCount from "./components/VisitCount/VisitCount";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Parallax from "./components/Parallax/Parallax";
@@ -8,6 +10,11 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import Skills from "./components/Skills/Skills";
 
 const App = () => {
+  useEffect(() => {
+    // Fire-and-forget: increment visit counter on serverless endpoint.
+    fetch("/api/visit", { method: "POST", keepalive: true }).catch(() => {});
+  }, []);
+
   return (
     <div>
       <section id="Home">
@@ -40,6 +47,12 @@ const App = () => {
           <Contact />
         </div>
       </section>
+
+      <footer className="site-footer">
+        <div className="content">
+          <VisitCount />
+        </div>
+      </footer>
     </div>
   );
 };
