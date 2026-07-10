@@ -1,0 +1,77 @@
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  /* solid background: backdrop-filter support varies and a translucent
+     overlay lets the page bleed through behind the menu links */
+  background: linear-gradient(180deg, #0d0d20, #0c0c1d);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+
+  .closeButton {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+  }
+
+  .menuLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    a {
+      font-size: 30px;
+      font-weight: 600;
+      color: #ffffff;
+      padding: 12px 28px;
+      letter-spacing: 0.5px;
+      border-radius: 12px;
+
+      &:hover {
+        color: #ffb03a;
+      }
+    }
+  }
+
+  .menuSocials {
+    display: flex;
+    gap: 14px;
+
+    a {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.04);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .mobileMenu {
+    display: none;
+  }
+}

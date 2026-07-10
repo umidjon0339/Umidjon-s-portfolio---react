@@ -1,0 +1,9 @@
+/*
+ * Tailwind v4 without preflight: the portfolio ships its own reset in
+ * styles/globals.scss, and Tailwind's base layer would override the
+ * existing SCSS design (heading sizes, buttons, images).
+ */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);

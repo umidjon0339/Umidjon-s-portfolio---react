@@ -1,0 +1,126 @@
+@use "../../styles/mixins" as *;
+
+.navbar {
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #0d0c1c;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  @include mobile {
+    height: 72px;
+  }
+
+  .wrapper {
+    max-width: 1366px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px;
+
+    @include mobile {
+      padding: 0 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .logo {
+      width: 220px;
+      height: 100px;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .logoCompact {
+      display: none;
+      width: 40px;
+      height: 40px;
+
+      @include mobile {
+        display: block;
+      }
+    }
+
+    .tabs {
+      display: flex;
+      gap: 40px;
+
+      a {
+        text-decoration: none;
+        font-weight: bold;
+        color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: color 0.3s, background-color 0.3s;
+
+        &:hover {
+          color: #ffb03a;
+          background-color: rgba(255, 255, 255, 0.06);
+        }
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .social {
+      display: flex;
+      gap: 20px;
+
+      .socialIcon,
+      svg {
+        width: 35px;
+        height: 35px;
+        color: #ffffff;
+      }
+
+      a {
+        display: inline-flex;
+        padding: 4px;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          opacity: 0.85;
+        }
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .burger {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 12px;
+      background: transparent;
+      color: #ffffff;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 26px;
+        height: 26px;
+      }
+
+      @include mobile {
+        display: inline-flex;
+      }
+    }
+  }
+}
